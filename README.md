@@ -6,7 +6,7 @@
 
 ### linux
 |Playbook|Desctiption|Module|
-|:-:|:-:|:-:|
+|:--|:--|:--|
 |selinux.yml|SELinux configuration|selinux|
 |hostname.yml|Hostname configuration|hostname|
 |hosts.yml|/etc/hosts configuration|copy|
@@ -18,3 +18,18 @@
 |dir.yml|Directories configuration|file|
 
 
+#### selinux.yml
+- Description
+SELinux configuration
+
+- Variables
+Set variables to group_vars/ or host_vars like below.
+
+|Variable|Range|
+|:--|:--|
+|linux_selinux_state|disabled¥nenforcing¥npermissive|
+
+```yaml:all.yml
+linux_selinux_state: disabled
+
+```
