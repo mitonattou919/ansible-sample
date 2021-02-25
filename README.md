@@ -31,7 +31,6 @@ Set variables to group_vars/ or host_vars like below.
     |linux_selinux_state|disabled<br>enforcing<br>permissive|
 
 - Example
-```yaml:all.yml
-linux_selinux_state: disabled
-
-```
+    ```yaml:all.yml
+    linux_selinux_state: disabled
+    ```
