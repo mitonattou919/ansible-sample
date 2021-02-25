@@ -19,16 +19,18 @@
 
 
 #### selinux.yml
+
 - Description
 SELinux configuration
 
 - Variables
 Set variables to group_vars/ or host_vars like below.
 
-|Variable|Range|
-|:--|:--|
-|linux_selinux_state|disabled¥nenforcing¥npermissive|
+    |Variable|Range|
+    |:--|:--|
+    |linux_selinux_state|disabled<br>enforcing<br>permissive|
 
+- Example
 ```yaml:all.yml
 linux_selinux_state: disabled
 
