@@ -1,6 +1,6 @@
 - name: Packages installation
   dnf:
-    name: "{{ linux_packages }}"
+    name: "{{ nginx_packages }}"
     state: latest
   become: yes
 
