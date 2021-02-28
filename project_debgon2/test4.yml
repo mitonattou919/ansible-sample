@@ -1,7 +1,0 @@
-- hosts: op
-  tasks:
-    - name: test
-      debug:
-        msg: "test"
-      become: yes
-

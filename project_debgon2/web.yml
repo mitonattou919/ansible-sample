@@ -1,8 +1,6 @@
-- hosts: ap
+- hosts: web
   roles:
     - role: linux
       tags: linux
-    - role: sysstat
-      tags: sysstat
 #    - role: nginx
 #      tags: nginx
