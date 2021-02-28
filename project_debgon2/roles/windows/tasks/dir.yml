@@ -1,0 +1,7 @@
+- name: Directories configuration
+  win_file:
+    path: "{{ item.dir_path }}"
+    state: directory
+  with_items:
+    - "{{ win_dir_info }}"
+

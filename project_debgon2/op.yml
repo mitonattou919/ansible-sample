@@ -1,0 +1,4 @@
+- hosts: op
+  roles:
+    - role: windows
+      tags: windows

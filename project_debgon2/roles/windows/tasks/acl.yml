@@ -1,0 +1,12 @@
+- name: ACL configuration
+  win_acl:
+    path: "{{ item.dir_path }}"
+    state: present
+    user: "{{ item.user }}"
+    rights: "{{ item.rights }}"
+    type: "{{ item.type }}"
+    inherit: ContainerInherit,ObjectInherit
+    propagation: None
+  with_items:
+    - "{{ win_acl_info }}"
+
