@@ -1,0 +1,8 @@
+[mst]
+master ansible_host=192.168.56.201
+
+[wrk]
+worker1 ansible_host=192.168.56.202
+worker2 ansible_host=192.168.56.203
+
+

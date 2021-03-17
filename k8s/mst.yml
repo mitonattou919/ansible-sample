@@ -1,0 +1,8 @@
+- hosts: mst
+  roles:
+    - role: linux
+      tags: linux
+    - role: sysstat
+      tags: sysstat
+    - role: k8s
+      tags: k8s

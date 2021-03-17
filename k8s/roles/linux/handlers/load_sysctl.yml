@@ -1,0 +1,3 @@
+- name: load sysctl
+  shell: "sysctl --system"
+  become: yes

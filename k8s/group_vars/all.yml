@@ -1,0 +1,54 @@
+# Package Repository
+linux_repo_server: ansible-svr
+linux_repo_basedir: /work/InstallMedia
+linux_repo_gpgkey: RPM-GPG-KEY-centosofficial
+
+# SELinux
+linux_selinux_state: disabled
+
+# Required modules
+linux_modules:
+  - br_netfilter
+
+# Required packages
+linux_packages:
+  - git
+  - sysstat
+  - chrony
+  - openssh
+  - sudo
+  - curl
+  - iptables
+  - docker
+
+# Kernel parameters
+linux_sysctl_info:
+  - { kernel_parm: 'net.bridge.bridge-nf-call-ip6tables ', kernel_value: '1' }
+  - { kernel_parm: 'net.bridge.bridge-nf-call-iptables ', kernel_value: '1' }
+
+# Service configurations
+linux_systemd_info:
+  - { service_name: 'chronyd', service_enabled: 'yes', service_state: 'started' }
+  - { service_name: 'crond', service_enabled: 'yes', service_state: 'started' }
+  - { service_name: 'firewalld', service_enabled: 'no', service_state: 'stopped' }
+  - { service_name: 'iptables', service_enabled: 'yes', service_state: 'started' }
+  - { service_name: 'kdump', service_enabled: 'no', service_state: 'stopped' }
+  - { service_name: 'sshd', service_enabled: 'yes', service_state: 'started' }
+  - { service_name: 'sysstat', service_enabled: 'yes', service_state: 'started' }
+  - { service_name: 'docker', service_enabled: 'yes', service_state: 'started' }
+
+# Sysstat configurations
+sysstat_config:
+  - { config_file: 'usr/lib/systemd/system/sysstat-collect.service', config_owner: 'root', config_group: 'root', config_mode: '0644' }
+  - { config_file: 'usr/lib/systemd/system/sysstat-collect.timer', config_owner: 'root', config_group: 'root', config_mode: '0644' }
+
+# k8s packeges
+k8s_packages:
+  - kubelet
+  - kubeadm
+  - kubectl
+
+# k8s service configuration
+k8s_systemd_info:
+  - { service_name: 'kubelet', service_enabled: 'yes', service_state: 'started' }
+

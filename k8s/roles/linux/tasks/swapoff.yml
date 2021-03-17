@@ -1,0 +1,20 @@
+- name: Check swap status
+  shell: swapon -s | grep "^/dev/.*$"
+  register: result
+  check_mode: no
+  changed_when: false
+  become: yes
+  failed_when: result.rc not in [ 0, 1 ]
+
+- name: Disable swap
+  shell: "swapoff -a"
+  when: result.rc == 0
+
+- name: Disable swap persistent
+  lineinfile:
+    path: "/etc/fstab"
+    state: present
+    backrefs: yes
+    regexp: '^(/dev/mapper/centos-swap.*)$'
+    line: '#\1'
+
