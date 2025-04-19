@@ -1,0 +1,9 @@
+- name: Service configuration
+  systemd:
+    name: "{{ item.service_name }}"
+    enabled: "{{ item.service_enabled }}"
+    state: "{{ item.service_state }}"
+  with_items:
+    - "{{ k8s_systemd_info }}"
+  become: yes
+

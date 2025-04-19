@@ -1,0 +1,19 @@
+- name: Sysstat installation
+  yum:
+    name: sysstat
+    state: present
+  become: yes
+
+- name: Sysstat configuration
+  copy:
+    src: "{{ item.config_file }}"
+    dest: "/{{ item.config_file }}"
+    owner: "{{ item.config_owner }}"
+    group: "{{ item.config_group }}"
+    mode: "{{ item.config_mode }}"
+  with_items:
+    - "{{ sysstat_config }}"
+  become: yes
+  notify: sysstat restart
+
+

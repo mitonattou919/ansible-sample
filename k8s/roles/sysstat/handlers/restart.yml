@@ -1,0 +1,7 @@
+- name: sysstat restart
+  systemd:
+    name: sysstat
+    state: restarted
+    daemon_reload: yes
+  become: yes
+

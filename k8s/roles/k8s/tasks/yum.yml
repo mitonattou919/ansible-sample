@@ -1,0 +1,6 @@
+- name: Packages installation
+  yum:
+    name: "{{ k8s_packages }}"
+    state: latest
+  become: yes
+

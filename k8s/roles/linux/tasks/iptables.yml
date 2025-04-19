@@ -1,0 +1,10 @@
+- name: iptables configuration
+  iptables:
+    comment: "{{ item.name }}"
+    chain: "{{ item.chain }}"
+    protocol: "{{ item.protocol }}"
+    destination_port: "{{ item.port_num }}"
+    jump: "{{ item.jump }}"
+  with_items:
+    - "{{ k8s_ports }}"
+  become: yes

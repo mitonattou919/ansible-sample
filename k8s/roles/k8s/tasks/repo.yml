@@ -1,0 +1,9 @@
+- name: YUM Repository configuration
+  copy:
+    src: etc/yum.repos.d/kubernetes.repo
+    dest: /etc/yum.repos.d/kubernetes.repo
+    owner: root
+    group: root
+    mode: 644
+  become: yes
+

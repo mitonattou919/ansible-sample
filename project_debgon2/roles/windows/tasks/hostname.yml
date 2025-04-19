@@ -1,0 +1,9 @@
+- name: Hostname configuration
+  win_hostname:
+    name: "{{ win_host_name }}"
+  register: result
+
+- name: debug
+  debug:
+    msg: "{{ result }}"
+

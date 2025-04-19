@@ -1,0 +1,39 @@
+# Package Repository
+linux_repo_server: ansible-svr
+linux_repo_basedir: /media
+linux_repo_gpgkey: RPM-GPG-KEY-redhat-release
+
+# SELinux
+linux_selinux_state: disabled
+
+# Required packages
+linux_packages:
+  - git
+  - sysstat
+  - chrony
+  - openssh
+  - dmidecode
+  - gdb
+  - kexec-tools
+  - ltrace
+  - net-tools
+  - sos
+  - strace
+  - sysstat
+  - systemtap-runtime
+  - tcpdump
+  - trace-cmd
+  - lsof
+  - iotop
+  - traceroute
+  - zip
+  - unzip
+  - rsyslog
+  - logrotate
+
+
+# Sysstat configurations
+sysstat_config:
+  - { config_file: 'usr/lib/systemd/system/sysstat-collect.service', config_owner: 'root', config_group: 'root', config_mode: '0644' }
+  - { config_file: 'usr/lib/systemd/system/sysstat-collect.timer', config_owner: 'root', config_group: 'root', config_mode: '0644' }
+

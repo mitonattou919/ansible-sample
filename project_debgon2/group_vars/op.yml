@@ -1,0 +1,19 @@
+# ANSIBLE
+ansible_user: administrator
+ansible_password: <password for ansible>
+ansible_connection: ssh
+ansible_port: 22
+ansible_shell_type: cmd
+#tempdir: C:\\Windows\\Temp
+
+win_dir_info:
+  - { dir_path: 'C:\work', dir_owner: 'administrator', dir_group: 'administrators', dir_mode: '0755' }
+  - { dir_path: 'C:\work\tmp', dir_owner: 'administrator', dir_group: 'administrators', dir_mode: '0755' }
+  - { dir_path: 'C:\log', dir_owner: 'administrator', dir_group: 'administrators', dir_mode: '0755' }
+  - { dir_path: 'C:\log\operation', dir_owner: 'administrator', dir_group: 'administrators', dir_mode: '0755' }
+
+win_acl_info:
+  - { dir_path: 'C:\work', user: 'Administrators', rights: 'FullControl', type: 'allow' }
+  - { dir_path: 'C:\work', user: 'Users', rights: 'FullControl', type: 'allow' }
+
+

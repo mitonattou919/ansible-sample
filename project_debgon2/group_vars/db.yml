@@ -1,0 +1,87 @@
+# Oracle
+oracle_packages:
+  - bc
+  - binutils
+  - elfutils-libelf
+  - elfutils-libelf-devel
+  - fontconfig-devel
+  - glibc glibc-devel
+  - ksh
+  - libaio
+  - libaio-devel
+  - libXrender
+  - libX11
+  - libXau
+  - libXi
+  - libXtst
+  - libgcc
+  - libnsl
+  - librdmacm
+  - libstdc++
+  - libstdc++-devel
+  - libxcb
+  - libibverbs
+  - make
+  - smartmontools
+  - sysstat
+  - libnsl2
+  - net-tools
+  - nfs-utils
+  - ipmitool
+
+
+# Linux
+linux_group_info:
+  - { group_name: 'oinstall', group_id: '2102' }
+  - { group_name: 'dba', group_id: '2103' }
+  - { group_name: 'oper', group_id: '2104' }
+  - { group_name: 'asmadmin', group_id: '2105' }
+  - { group_name: 'asmdba', group_id: '2106' }
+  - { group_name: 'asmoper', group_id: '2107' }
+  - { group_name: 'backupdba', group_id: '2108' }
+  - { group_name: 'dgdba', group_id: '2109' }
+  - { group_name: 'kmdba', group_id: '2110' }
+  - { group_name: 'racdba', group_id: '2111' }
+
+linux_user_info:
+  - { user_name: 'oracle', user_id: '2100', user_group: 'oinstall', 
+      user_groups: 'dba,asmdba,backupdba,dgdba,kmdba,racdba,oper',
+      user_password: '<password for user>' }
+  - { user_name: 'grid', user_id: '2101', user_group: 'oinstall', 
+      user_groups: 'asmadmin,asmdba,asmoper,racdba',
+      user_password: '<password for user>' }
+
+
+linux_dir_info:
+  - { dir_path: '/u01', dir_owner: 'grid', dir_group: 'oinstall', dir_mode: '0755' }
+  - { dir_path: '/u01/app', dir_owner: 'grid', dir_group: 'oinstall', dir_mode: '0755' }
+  - { dir_path: '/u01/app/grid', dir_owner: 'grid', dir_group: 'oinstall', dir_mode: '0755' }
+  - { dir_path: '/u01/app/19.3.0', dir_owner: 'grid', dir_group: 'oinstall', dir_mode: '0755' }
+  - { dir_path: '/u01/app/19.3.0/grid', dir_owner: 'grid', dir_group: 'oinstall', dir_mode: '0755' }
+  - { dir_path: '/u01/app/oraInventory', dir_owner: 'grid', dir_group: 'oinstall', dir_mode: '0755' }
+  - { dir_path: '/u01/app/oracle', dir_owner: 'oracle', dir_group: 'oinstall', dir_mode: '0755' }
+  - { dir_path: '/u01/app/oracle/product', dir_owner: 'oracle', dir_group: 'oinstall', dir_mode: '0755' }
+  - { dir_path: '/u01/app/oracle/product/19.3.0', dir_owner: 'oracle', dir_group: 'oinstall', dir_mode: '0755' }
+  - { dir_path: '/u01/app/oracle/product/19.3.0/dbhome_1', dir_owner: 'oracle', dir_group: 'oinstall', dir_mode: '0755' }
+
+linux_part_info:
+  - { part_devname: '/dev/sdb', part_number: '1', part_label: 'msdos' }
+  - { part_devname: '/dev/sdc', part_number: '1', part_label: 'msdos' }
+  - { part_devname: '/dev/sdd', part_number: '1', part_label: 'msdos' }
+  - { part_devname: '/dev/sde', part_number: '1', part_label: 'msdos' }
+  - { part_devname: '/dev/sdf', part_number: '1', part_label: 'msdos' }
+  - { part_devname: '/dev/sdg', part_number: '1', part_label: 'msdos' }
+  - { part_devname: '/dev/sdh', part_number: '1', part_label: 'msdos' }
+  
+
+#linux_fs_info:
+#  - { fs_dev: '/dev/sdb1', fs_type: 'xfs' }
+#  - { fs_dev: '/dev/sdc1', fs_type: 'xfs' }
+
+linux_systemd_info:
+  - { service_name: 'chronyd', service_enabled: 'yes' }
+  - { service_name: 'crond', service_enabled: 'yes' }
+  - { service_name: 'firewalld', service_enabled: 'no' }
+  - { service_name: 'kdump', service_enabled: 'yes' }
+  - { service_name: 'sshd', service_enabled: 'yes' }
+  - { service_name: 'sysstat', service_enabled: 'yes' }

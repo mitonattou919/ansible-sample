@@ -1,0 +1,6 @@
+- hosts: web
+  roles:
+    - role: linux
+      tags: linux
+    - role: nginx
+      tags: nginx

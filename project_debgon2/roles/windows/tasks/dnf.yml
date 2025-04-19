@@ -1,0 +1,8 @@
+- name: Packages installation
+  dnf:
+    name: "{{ linux_packages }}"
+    disablerepo: "*"
+    enablerepo: "InstallMedia-BaseOS,InstallMedia-AppStream"
+    state: latest
+  become: yes
+

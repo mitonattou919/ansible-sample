@@ -1,0 +1,4 @@
+- name: SELinux configuration
+  selinux: state={{ linux_selinux_state }}
+  become: yes
+

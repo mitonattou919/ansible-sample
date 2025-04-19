@@ -1,0 +1,7 @@
+linux_host_name: worker2
+linux_ip_addr: 192.168.56.203
+
+linux_interfaces:
+  - { dev_name: 'enp0s3', ipv4_method: 'auto' }
+  - { dev_name: 'enp0s8', ipv4_method: 'manual' }
+

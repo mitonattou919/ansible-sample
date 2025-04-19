@@ -1,0 +1,14 @@
+- import_tasks: selinux.yml
+- import_tasks: modprobe.yml
+- import_tasks: sysctl.yml
+- import_tasks: swapoff.yml
+- import_tasks: hostname.yml
+- import_tasks: hosts.yml
+#- import_tasks: repo.yml
+- import_tasks: yum.yml
+- import_tasks: systemd.yml
+#- import_tasks: parted.yml
+#- import_tasks: filesystem.yml
+- import_tasks: dir.yml
+- import_tasks: iptables.yml
+

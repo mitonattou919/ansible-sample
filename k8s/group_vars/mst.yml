@@ -1,0 +1,27 @@
+# k8s network port
+k8s_ports:
+  - { name: 'k8s api server', chain: 'INPUT', protocol: 'tcp', port_num: '6443', jump: 'ACCEPT' }
+  - { name: 'etcd client api1', chain: 'INPUT', protocol: 'tcp', port_num: '2379', jump: 'ACCEPT' }
+  - { name: 'etcd client api2', chain: 'INPUT', protocol: 'tcp', port_num: '2380', jump: 'ACCEPT' }
+  - { name: 'kubelet api', chain: 'INPUT', protocol: 'tcp', port_num: '10250', jump: 'ACCEPT' }
+  - { name: 'kube scheduler', chain: 'INPUT', protocol: 'tcp', port_num: '10251', jump: 'ACCEPT' }
+  - { name: 'kube controller manager', chain: 'INPUT', protocol: 'tcp', port_num: '10252', jump: 'ACCEPT' }
+
+# Linux
+linux_dir_info:
+  - { dir_path: '/work', dir_owner: 'root', dir_group: 'root', dir_mode: '0755' }
+  - { dir_path: '/work/tmp', dir_owner: 'root', dir_group: 'root', dir_mode: '0755' }
+  - { dir_path: '/work/InstallMedia', dir_owner: 'root', dir_group: 'root', dir_mode: '0755' }
+  - { dir_path: '/log', dir_owner: 'root', dir_group: 'root', dir_mode: '0755' }
+  - { dir_path: '/log/app', dir_owner: 'root', dir_group: 'root', dir_mode: '0755' }
+  - { dir_path: '/log/web', dir_owner: 'root', dir_group: 'root', dir_mode: '0755' }
+
+linux_part_info:
+  - { part_devname: '/dev/sdb', part_number: '1', part_label: 'msdos' }
+  - { part_devname: '/dev/sdc', part_number: '1', part_label: 'msdos' }
+
+linux_fs_info:
+  - { fs_dev: '/dev/sdb1', fs_type: 'xfs' }
+  - { fs_dev: '/dev/sdc1', fs_type: 'xfs' }
+
+
